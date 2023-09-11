@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Program.cs~RF356763.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
@@ -17,7 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\IShoppingApplication.Repository\IShoppingApplication.Repository.csproj" />
+    <ProjectReference Include="..\ShoppingApplication.Common\ShoppingApplication.Common.csproj" />
+    <ProjectReference Include="..\ShoppingApplication.Repository\ShoppingApplication.Repository.csproj" />
   </ItemGroup>
 
 </Project>

@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IShoppingApplication.Repository\IShoppingApplication.Repository.csproj" />
+    <ProjectReference Include="..\ShoppingApplication.Common\ShoppingApplication.Common.csproj" />
+  </ItemGroup>
+
 </Project>

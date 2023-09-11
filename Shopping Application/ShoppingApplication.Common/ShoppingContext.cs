@@ -9,6 +9,6 @@ namespace ShoppingApplication.Common
         {
 
         }
-        public DbSet<Product> MyProperty { get; set; }
+        public DbSet<Product> Product { get; set; }
     }
 }
