@@ -18,7 +18,7 @@ namespace ShoppingApplication.Repository
             _shoppingContext = shoppingContext;
         }
 
-        public async Task<IEnumerable<Product>> GetProducts()
+        public async Task<IReadOnlyList<Product>> GetProducts()
         {
             var products = await _shoppingContext.Product.ToListAsync();
             return products;
