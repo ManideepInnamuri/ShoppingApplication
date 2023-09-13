@@ -25,5 +25,36 @@ namespace ShoppingApplication.Api.Controllers
             var product = await _productsRepo.GetProductById(id);
             return Ok(product);
         }
+
+        
+
+        [HttpGet("brands")]
+        public async Task<IActionResult> GetProductBrands()
+        {
+            var brands = await _productsRepo.GetProductBrands();
+            return Ok(brands);
+        }
+
+        //[HttpGet("{id}")]
+        //public async Task<IActionResult> GetProductBrandById(int id)
+        //{
+        //    var productBrand = await _productsRepo.GetProductBrandById(id);
+        //    return Ok(productBrand);
+        //}
+
+
+        [HttpGet("types")]
+        public async Task<IActionResult> GetProductTypes()
+        {
+            var types = await _productsRepo.GetProductTypes();
+            return Ok(types);
+        }
+
+        //[HttpGet("{id}")]
+        //public async Task<IActionResult> GetProductTypeById(int id)
+        //{
+        //    var productType = await _productsRepo.GetProductTypeById(id);
+        //    return Ok(productType);
+        //}
     }
 }

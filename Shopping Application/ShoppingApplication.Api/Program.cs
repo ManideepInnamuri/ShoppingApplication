@@ -31,4 +31,22 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+#region For Migration to Apply Automatically
+
+using var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+var context = services.GetRequiredService<ShoppingContext>();
+var logger = services.GetRequiredService<ILogger<Program>>();
+try
+{
+    await context.Database.MigrateAsync();
+    await ShoppingContextSeed.SeedAsync(context);
+}
+catch (Exception ex)
+{
+    logger.LogError(ex, "An Error Occurred during Migration");
+}
+
+#endregion
+
 app.Run();
